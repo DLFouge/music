@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>音乐播放器</title>
+  <!--css样式-->
+  <style type="text/css">
+	*{margin:0px;padding:0px;}
+	body{background:url("images/bg2.gif");}
+	#Music{width:730px;height:470px;margin:150px auto;box-shadow:0px 0px 15px #000;}
+	#Music .Audio{width:360px;height:470px;background:#00ff66;float:left;}
+	#Music .Txt{width:370px;height:470px;background:#ff0066;float:right;}
+	#Music .Audio .title{width:360px;height:60px;background:url("images/bg1.jpg");font-size:20px;font-family:"微软雅黑";
+							color:#666;text-align:center;line-height:60px;}
+	#Music .Audio img.xxpic{display:block;}
+	#Music .Audio .Music_But{width:360px;height:95px;background:url("images/bg2.jpg");padding-top:25px;}
+	#Music .Audio .Music_But .but{width:150px;height:30px;margin:0px auto;}
+
+	#Music .Audio .Music_But .but span{width:27px;height:26px;display:block;float:left;}
+	#Music .Audio .Music_But .but span.prev{background:url("images/sm_icon.png") -49px 0px;}
+	#Music .Audio .Music_But .but span.play{width:18px;background:url("images/sm_icon.png") -101px 0px;margin:0px 30px;}
+	#Music .Audio .Music_But .but span.next{background:url("images/sm_icon.png") -124px 0px;}
+
+	#Music .Audio .Music_But .bar{width:220px;height:5px;background:#ddd;margin:30px 10px 0px;}
+	#Music .Audio .Music_But .bar .barCon{width:0px;height:5px;background:red;}
+	#Music .Audio .Music_But .u-time{display:inline-block;vertical-align:middle;margin-top:-28px;margin-left:240px;font-size:12px;overflow:hidden;color:#585957;}
+
+    
+
+	#Music .Txt .title{width:370px;height:60px;font-size:20px;font-family:"微软雅黑";
+							color:#fff;text-align:center;line-height:60px;}
+	#Music .Txt ul{width:370px;height:410px;border:solid 1px;overflow-x:hidden;overflow-y:scroll;}
+	#Music .Txt ul li{width:370px;height:41px;list-style-type:none;/*去掉圆点*/background:url("images/bg4.png");
+						color:#fff;font-size:14px;line-height:41px;font-family:"微软雅黑";}
+	#Music .Txt ul li a{color:#7e868e;text-decoration:none;/*去掉下划线*/background:url(images/play.png) no-repeat 10px 14px;
+						/*图片只使用一次*/display:block;height:40px;text-indent:30px;/*缩进*/}
+	#Music .Txt ul li a:hover{color:#fff;}
+	#Music .Txt ul li.active a{color:#fff;border-bottom:1px solid #f16d6e;/*边框线*/background:url(images/pause.png) no-repeat 10px 14px;}
+  </style>
+ </head>
+ <body>
+ <!--div盒子模型，高度，宽度，放内容的长方形-->
+ <div id="Music">
+	<!--左边播放器开始-->
+	<div class="Audio">	
+		<img src="images/music.gif" width="360px" height="290px" class="xxpic"/>
+		<div class="title"><strong>标题</strong>&nbsp;&nbsp;<small>歌手</small></div>
+		<!--按钮开始-->
+		<div class="Music_But">
+			<div class="but">
+				<span class="prev"></span>
+				<span class="play"></span>
+				<span class="next"></span>
+			</div>
+			<div class="bar">
+				<div class="barCon"></div>
+			</div>
+			<div class="u-time">00:00/00:00</div>
+		</div>
+		<!--按钮结束-->
+	</div>
+	<!--左边播放器结束-->
+
+	<!--右边播放歌曲开始-->
+	<div class="Txt">
+		<div class="title">音乐播放器</div>
+		<ul onscroll="ToScroll.scrollTop = this.scrollTop;">
+			<li class="active"><a href="javascript:void(0)" dataSrc="mp3/爱上你等于爱上寂寞.mp3">爱上你等于爱上寂寞</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/当你老了.mp3">当你老了</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/给我一个理由忘记.mp3">给我一个理由忘记</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/红玫瑰.mp3">红玫瑰</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/假如爱有天意.mp3">假如爱有天意</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/看得最远的地方.mp3">看得最远的地方</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/你不是真正的快乐.mp3">你不是真正的快乐</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/亲爱的小孩.mp3">亲爱的小孩</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/她说.mp3">她说</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/我可以抱你吗.mp3">我可以抱你吗</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/小幸运.mp3">小幸运</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/一次就好.mp3">一次就好</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/一路上有你.mp3">一路上有你</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/咱们结婚吧.mp3">咱们结婚吧</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/烛光里的妈妈.mp3">烛光里的妈妈</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/左耳.mp3">左耳</a></li>
+		</ul>
+	</div>
+	<!--右边播放歌曲结束-->
+ </div>
+
+
+
+ <!--引用外部jquery类库文件-->
+ <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+ <script type="text/javascript">
+	var MusicSrc="mp3/爱上你等于爱上寂寞.mp3";
+	var Audio=CreatMusic(MusicSrc);     //创建音乐播放器对象
+	var kf=1;   //开关  1关闭  2开启
+	var _index=0;    //进来播放的是第一首歌
+
+	//点击播放按钮
+	$(".but span.play").click(function(){
+		if(kf==1){
+			$(this).css("background-position","-79px 0px");
+			Audio.play();   //播放
+			setInterval(changebar,1000);
+			kf=2;
+		}else{
+			$(this).css("background-position","-101px 0px");
+			Audio.pause();   //暂停
+			kf=1;
+		}
+	});
+
+	//点击播放下一首
+	$(".but span.next").click(function(){
+		_index++;
+		MusicPlay();
+	});
+
+	//点击播放上一首
+	$(".but span.prev").click(function(){
+		_index--;
+		MusicPlay();
+	});
+
+	//点击播放右边歌曲
+	$(".Txt ul li").click(function(){
+		_index=$(this).index();  //获取序列号
+		if(kf==1){
+			MusicPlay();
+			setInterval(changebar,1000);
+			kf=2;
+		}else{
+			MusicPause();
+			kf=1;
+		}
+	});
+
+	//点击播放上一首和下一首
+	function MusicPlay(){
+		$(".Txt ul li").eq(_index).addClass("active").siblings("li").removeClass("active");
+		MusicSrc=$(".Txt ul li").eq(_index).find("a").attr("dataSrc");  //获取播放地址
+		Audio.src=MusicSrc;
+		Audio.play();
+	}
+	
+	//点击暂停
+	function MusicPause(){
+		$(".Txt ul li").eq(_index).removeClass("active");
+		MusicSrc=$(".Txt ul li").eq(_index).find("a").attr("dataSrc");  //获取播放地址
+		Audio.src=MusicSrc;
+		Audio.pause();
+	}
+
+	//创建音乐播放器
+	function CreatMusic(MusicSrc){
+		var CreatMp3=$("<audio src="+MusicSrc+"><audio>").get(0);
+		return CreatMp3;
+	}
+	//CreatMusic();
+
+	function changebar(){
+				var allTime=Audio.duration;        //获取总播放时间
+				var curTime=Audio.currentTime;     //获取当前播放时间
+				var bl=curTime/allTime;
+				var oWidth=$(".bar").width()*bl;
+				$(".barCon").css("width",oWidth);
+				$(".u-time").html(timeformat(curTime)+"/"+ timeformat(allTime));
+				if(curTime==allTime){
+					_index++;
+					MusicPlay();
+				}
+			}
+	//设置时间格式
+	function timeformat(time){
+			var t = Math.round(time);
+			var h = Math.floor(t/3600);
+			var m = Math.floor(t/60);
+			var s = t-h*3600-m*60;
+			if(h==0){
+				str=m>9?m:("0"+m)+":"+(s>9?s:("0"+s));
+			}else{
+				str=h>9?h:("0"+h)+":"+(m>9?m:("0"+m))+":"+(s>9?s:("0"+s));
+			}
+			return str;	
+		}
+
+
+ </script>
+  
+ </body>
+</html>
